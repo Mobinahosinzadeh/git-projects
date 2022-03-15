@@ -1,0 +1,91 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amoozesh</title>
+</head>
+<body>
+    <img src="../pic/11580.jpg" width="500px" height="300px" id="img1" class="img">
+    <img src="../pic/86416.jpg" width="500px" height="300px" class="img" id="img2">
+    <img src="../pic/86419.jpg" width="500px" height="300px"class="img" id="img3">
+
+    <h1>hello</h1>
+
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium tenetur quaerat id officia itaque es
+    </p>
+
+    <ul>
+        <li>test1</li>
+        <li>test2</li>
+        <li>test3</li>
+        <li>test4</li>
+    </ul>
+
+    <!-- <a href="https://google.com">Google</a>
+    <a href="https://darsman.com">Darsman</a> -->
+
+    <script>
+        var img1=document.getElementById("img1");
+        img1.addEventListener("click",function(){alert("hello");});
+        img1.addEventListener("click",fun1);
+        img1.addEventListener("click",function(){fun2("ali");});
+
+        function fun1(){
+            alert("hello Nana");
+        }
+
+        function fun2(name){
+            alert("hello "+name);
+        }
+
+
+
+
+
+
+
+        // var element=document.getElementById("img1");
+        // element.style.border="30px solid brown";
+
+        // var elements=document.getElementsByClassName("img");
+        // for(let i=0;i<elements.length;i++){
+        //     const item=elements[i];
+        //     item.style.border="20px solid violet";
+        //     item.style.padding="6px";
+        // }
+
+        // var elements2=document.getElementsByTagName("img");
+        // for(let i=0;i<elements2.length;i++){
+        //     const item=elements2[i];
+        //     item.style.border="20px solid violet";
+        //     item.style.padding="6px";
+        // }
+
+
+
+
+
+        // var images=document.images;
+        // for(let i=0;i<images.length;i++){
+        //     images[i].style.margin="10px";
+        //     images[i].style.border="16px solid violet";
+        //     images[i].style.borderRadius="30%";
+        // }
+
+        // var links=document.links;
+        // for(let j=0;j<links.length;j++){
+        //     links[i].target="blank";
+        //     // links[i].setAttribute("target","blank");
+        // }
+
+        // var title=document.title;
+        // alert(title);
+
+        // var url=document.URL;
+        // alert(url);
+
+    </script>
+</body>
+</html>

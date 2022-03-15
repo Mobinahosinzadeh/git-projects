@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slide{
+            display: none;
+            margin: auto;
+            width: 60%;
+            padding: 10px
+        }
+
+        body{
+            background-color: tan;
+        }
+
+        .img-constainer{
+            position: relative;
+        }
+
+        .prev, .next{
+            cursor: pointer;
+            position: absolute;
+            top: 5%;
+            margin-top: 2px;
+            padding: 15px;
+            color: snow;
+            font-size: 18px;
+            font-weight: bolder;
+            border-radius: 20%;
+            transition: 0.5s ease;
+        }
+
+        .next{
+            right: 0;
+        }
+
+        .next:hover, .prev:hover{
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .text{
+            color: seashell;
+            font-size: 15px;
+            padding: 10px 14px;
+            position: absolute;
+            top: 0;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .number{
+            color: seashell;
+            font-size: 14px;
+            font-weight: lighter;
+            position: absolute;
+            padding: 8px 12px;
+        }
+
+        .dot-container{
+            width: 100%;
+            text-align: center;
+        }
+
+        .dot{
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #fafafa;
+            display: inline-block;
+            transition: 0.4s ease-in-out;
+        }
+
+        .dot:hover , .active{
+            cursor: pointer;
+            background-color: slategray;
+        }
+
+        .fade{
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.2s;
+            animation-name: fade;
+            animation-duration: 1.2s;
+        }
+
+        @-webkit-keyframes fade {
+            from{opacity: 0.4}
+            to{opacity: 1}
+        }
+
+        @keyframes fade{
+            from {opacity: 0.4}
+            to{opacity: 1}
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="img-container">
+        <div class="slide fade">
+            <div class="number">1/4</div>
+            <img src="../pic/11580.jpg" alt="" width="90%" height="200px">
+            <div class="text">First Caption</div>
+      </div>
+      <div class="slide fade">
+          <div class="number">2/4</div>
+          <img src="../pic/86416.jpg" alt="" width="90%" height="200px">
+            <div class="text">Second Caption</div>
+      </div>
+      <div class="slide fade">
+          <div class="number">3/4</div>
+          <img src="../pic/86419.jpg" alt="" width="90%" height="200px">
+            <div class="text">Third Caption</div>
+      </div>
+      <div class="slide fade">
+          <div class="number">4/4</div>
+          <img src="../pic/86432.jpg" alt="" width="90%" height="200px">
+            <div class="text">Forth Caption</div>
+        </div>
+        <span class="prev" onclick="controlSlides(-1)">&#10094</span>
+        <span class="next" onclick="controlSlides(1)">&#10095</span>
+    </div>
+
+    <div class="dot-container">
+        <span class="dot" onclick="dotSlide(1)"></span>
+        <span class="dot" onclick="dotSlide(2)"></span>
+        <span class="dot" onclick="dotSlide(3)"></span>
+        <span class="dot" onclick="dotSlide(4)"></span>
+    </div>
+
+    <script>
+        var slideIndex = 2;
+        showSlides(slideIndex);
+
+        function controlSlides(n){
+            slideIndex += n;
+            showSlides(slideIndex);
+        }
+
+        function dotSlide(n){
+            slideIndex = n;
+            showSlides(slideIndex);
+        }
+
+        function showSlides(n){
+            let i;
+            const slides= document.getElementsByClassName("slide");
+            const dots = document.getElementsByClassName("dot");
+            if(n > slides.length){
+                slideIndex = 1;
+            }
+            if(n < 1){
+                slideIndex = slides.length;
+            }
+            
+            for(let i=0;i<slides.length;i++){
+                slides[i].style.display = 'none';
+            }
+            for(let i=0;i<dots.length;i++){
+                dots[i].classList.remove('active');
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].classList.add('active');
+        }
+    </script>
+
+    
+</body>
+</html>

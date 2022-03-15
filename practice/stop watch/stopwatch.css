@@ -1,0 +1,45 @@
+body {
+    background: linear-gradient(to bottom, rgb(75, 26, 130),rgba(75, 26, 130,0));
+    height: 100%
+}
+
+.h1{
+    height:150px;
+    color: #ccc;
+    padding-top:30px;
+    text-align: center;
+    font-family:fantasy;
+    font-size: 50px;
+    
+}
+
+#seconds,#tens{
+    font-size: 2.5em;
+}
+
+p{
+    text-align: center;
+}
+
+.stop{
+    width: 800px;
+    margin: 30px auto;
+    color: white;
+    text-align:center; 
+}
+
+button {
+    background: rgb(75, 26, 130);
+    color: #ccc;
+    border: 1px solid #ccc;
+    border-radius: 10%;;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 18px 10px;
+    width: 180px;
+    margin: 10px;
+}
+
+button:hover{
+    background: rgb(109, 40, 189);
+}

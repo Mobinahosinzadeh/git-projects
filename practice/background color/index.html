@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .container{
+                align-items: center;
+
+            }
+
+            h2 {
+                background: rgb(34, 34, 34);
+                color: white;
+                padding: 2px;
+                text-align: center;
+                width: 300px;
+                border-radius: 5px;
+            } 
+
+            .color{
+                color: rgb(47, 172, 221);
+            }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-center">
+            <h4>Color Flipper</h4>
+            <ul class="navlinks">
+                <li>
+                    <a href="index.html">simple</a>
+                </li>
+                <li>
+                    <a href="hex.html">Hex</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <h2>background color : <span class="color">
+                #f1f5f8
+            </span></h2>
+            <button class="btn btn-hero" id="btn">click</button>
+        </div>
+    </main>
+
+    <script>
+
+        const colors = ["green", "red", "rgba(133,122,200)", "#f15025"];
+        const btn = document.getElementById('btn');
+        const color = document.querySelector('.color');
+
+        btn.addEventListener('click', function(){
+            // console.log(document.body); //just to show we can do by this
+
+            //get random number between 0 - 3 for array items
+            const randomNumber = getRandomNumber();
+            console.log(randomNumber);
+            document.body.style.backgroundColor = colors[randomNumber];
+            color.textContent = colors[randomNumber];
+        });
+
+        function getRandomNumber(){
+            return Math.floor(Math.random()*colors.length);
+        }
+
+    </script>
+
+</body>
+</html>

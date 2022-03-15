@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Your weight : <input type="number" id="weight" placeholder="60 kilogram"><br><br>
+    Your height : <input type="number" id="height" placeholder="1.70 meters"/><br><br>
+    <button onclick="fun1()" padding="3px">submit</button>
+    
+    <!-- <p>You are : </p>
+    <form action="page1.html">
+        <input type="radio" id="male" name="gender" value="male"/>
+        <lable for="male">Male</lable>
+        <input type="radio" id="female" name="female" value="female">
+        <label for="female">Female</label>
+        
+    </form> -->
+    <script>
+        function fun1(){
+            var weight = document.getElementById("weight").value;
+            var height = document.getElementById("height").value;
+            height = height**2;
+            var res = weight/height;
+            document.write("Your BMI is : "+res.toFixed(1)+". ");
+
+            if (res<18.5){
+                document.write("You are underweight.")
+            }
+            else if(res>=18.5 && res<=24.9){
+                document.write("You are normal.")
+            }
+            else if(res>24.9 && res<=29){
+                document.write("You are overweight.")
+            }
+            else if(res>29){
+                document.write("You are Obese")
+            }
+            
+        }
+        
+
+        
+        
+      
+
+    </script>
+</body>
+</html>
